@@ -2,15 +2,225 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>El Libro de Arena</title>
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/scrollmagic/uncompressed/ScrollMagic.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/anime.js"></script>
+    <script src="js/main.js"></script>
   </head>
   <body>
-    <section class="section-1">
-      <p class="simplon">La línea consta de un número infinito de puntos; el plano, de un número infinito de líneas; el volumen, de un número infinito de planos; el hipervolumen, de un número infinito de volúmenes... No, decididamente no es éste, more geometrico, el mejor modo de iniciar mi relato. Afirmar que es verídico es ahora una convención de todo relato fantástico; el mío, sin embargo, es verídico.</p>
-      <p class="garamond">La línea consta de un número infinito de puntos; el plano, de un número infinito de líneas; el volumen, de un número infinito de planos; el hipervolumen, de un número infinito de volúmenes... No, decididamente no es éste, more geometrico, el mejor modo de iniciar mi relato. Afirmar que es verídico es ahora una convención de todo relato fantástico; el mío, sin embargo, es verídico.</p>
-    </section>
+    <div class="body-info">
+      <div class="top-left text-tiny info-item">
+        Jorge Luis Borges
+      </div>
+      <div class="bottom-left text-tiny info-item">
+        El Libro de Arena
+      </div>
+      <div class="top-right cooper-thin text-tinier info-item">
+        MENU
+      </div>
+      <div class="bottom-right cooper-thin text-tinier info-item">
+        SECTION <span class="section-number cooper-heavy">1</span>
+      </div>
+    </div>
+    <div class="section-1">
+      <section class="sub-section-1">
+        <img src="images/circle.svg" alt="circle" class="circle">
+      </section>
+      <section class="sub-section-2">
+        <img src="images/circle.svg" alt="circle" class="circle">
+        <img src="images/circle.svg" alt="circle" class="circle">
+        <img src="images/circle.svg" alt="circle" class="circle">
+        <img src="images/circle.svg" alt="circle" class="circle">
+        <img src="images/circle.svg" alt="circle" class="circle">
+        <img src="images/circle.svg" alt="circle" class="circle">
+        <img src="images/circle.svg" alt="circle" class="circle">
+        <img src="images/circle.svg" alt="circle" class="circle">
+        <img src="images/circle.svg" alt="circle" class="circle">
+        <img src="images/circle.svg" alt="circle" class="circle">
+        <img src="images/circle.svg" alt="circle" class="circle">
+        <img src="images/circle.svg" alt="circle" class="circle">
+        <img src="images/circle.svg" alt="circle" class="circle">
+      </section>
+      <section class="sub-section-3">
+        <p class="garamond text-large dots">
+          ......................................................................
+          ......................................................................
+          ....................................................
+        </p>
+        <p class="cooper-heavy text-large dots">
+          ......................................................................
+          ......................................................................
+          ......................................................................
+          ...................................................................
+        </p>
+        <p class="garamond text-large dots">
+          ......................................................................
+          ......................................................................
+          ......................................................................
+          .....................................
+        </p>
+        <p class="cooper-thin text-large dots">
+          ......................................................................
+          ......................................................................
+          ......................................................................
+          ......................................................................
+          ......................................................................
+          ...................
+        </p>
+        <p class="garamond text-large dots">
+          ......................................................................
+          ......................................................................
+          ......................................................................
+          ......................................................................
+          ......................................................................
+          ......................................................................
+          ......................................................................
+          ......................................................................
+          ......................................................................
+        </p>
+        <p class="cooper-heavy text-large dots">
+          ......................................................................
+          ......................................................................
+          .....................
+        </p>
+      </section>
+      <section class="sub-section-4">
+        <p class="cooper-heavy text-large">
+          La línea consta de un número infinito de puntos; el plano, de un número
+           infinito de líneas; el volumen, de un número infinito de planos; el
+           hipervolumen, de un número infinito de volúmenes... No, decididamente
+           no es éste, more geometrico, el mejor modo de iniciar mi relato. Afirmar
+           que es verídico es ahora una convención de todo relato fantástico; el
+           mío, sin embargo, es verídico.
+         </p>
+        <p class="garamond text-large">
+          La línea consta de un número infinito de puntos; el plano, de un número
+           infinito de líneas; el volumen, de un número infinito de planos; el
+           hipervolumen, de un número infinito de volúmenes... No, decididamente
+           no es éste, more geometrico, el mejor modo de iniciar mi relato. Afirmar
+           que es verídico es ahora una convención de todo relato fantástico; el
+           mío, sin embargo, es verídico.
+         </p>
+        <p class="cooper-thin text-large">
+          La línea consta de un número infinito de puntos; el plano,
+          de un número infinito de líneas; el volumen, de un número infinito
+          de planos; el hipervolumen, de un número infinito de volúmenes... No,
+          decididamente no es éste, more geometrico, el mejor modo de iniciar mi
+          relato. Afirmar que es verídico es ahora una convención de todo relato
+          fantástico; el mío, sin embargo, es verídico.
+        </p>
 
+        <div class="veridico-container">
+          <p class="cooper-heavy text-large">
+            La línea consta de un número infinito de puntos; el plano, de un
+            número infinito de líneas; el volumen, de un número infinito de
+            planos; el hipervolumen, de un número infinito de volúmenes... No,
+            decididamente no es éste, more geometrico, el mejor modo de iniciar
+            mi relato. Afirmar que es verídico es ahora una convención de todo
+            relato fantástico; el mío, sin embargo, es <span style="opacity: 0">verídico.</span>
+          </p>
+          <p class="veridico-span cooper-heavy text-large" data-tilt>
+            verídico.
+          </p>
+        </div>
+
+        <p class="garamond text-large">
+          La línea consta de un número infinito de puntos; el plano, de un número
+           infinito de líneas; el volumen, de un número infinito de planos; el
+           hipervolumen, de un número infinito de volúmenes... No, decididamente
+            no es éste, more geometrico, el mejor modo de iniciar mi relato.
+            Afirmar que es verídico es ahora una convención de todo relato
+            fantástico; el mío, sin embargo, es verídico.
+        </p>
+      </section>
+    </div>
+    <div class="section-2">
+      <div class="section-flex">
+        <div class="section-left">
+          Yo vivo solo, en un cuarto piso de la calle Belgrano. Hará unos meses, al
+          atardecer, oí un golpe en la puerta. Abrí y entró un desconocido. Era un
+          hombre alto, de rasgos desdibujados. Acaso mi <span class="cooper-heavy miopia" onclick="miopia()">miopía</span> los vio así. Todo su
+          aspecto era de pobreza decente. Estaba de gris y traía una valija gris en
+          la mano. En seguida sentí que era <span class="cooper-heavy extranjero" onclick="extranjero()">extranjero</span>. Al principio lo creí viejo;
+          luego advertí que me había engañado su escaso pelo rubio, casi blanco, a
+          la manera escandinava. En el curso de nuestra conversación, que no duraría
+          una hora, supe que procedía de las Orcadas.
+          Le señalé una silla. El hombre tardó un rato en hablar. Exhalaba
+          melancolía, como yo ahora.
+        </div>
+        <div class="section-right">
+
+        </div>
+      </div>
+      <div class="section-flex">
+        <div class="section-left">
+
+        </div>
+        <div class="section-right line1">
+          — I sell Bibles — he told me.
+        </div>
+      </div>
+      <div class="section-flex">
+        <div class="section-left">
+          No sin pedantería le contesté:
+        </div>
+        <div class="section-right">
+
+        </div>
+      </div>
+      <div class="section-flex">
+        <div class="section-left">
+
+        </div>
+        <div class="section-right line2">
+          — In this house there are several English Bibles, including John Wyclif’s,
+          the first of all. I also have Cypriano de Valera’s, Luther’s — which, as
+          a piece of literature, is the worst of the lot — and a copy of the Vulgate
+          in Latin. As you can see, it’s not Bibles I have a need for.
+        </div>
+      </div>
+      <div class="section-flex">
+        <div class="section-left">
+          Al cabo de un silencio me contestó.
+        </div>
+        <div class="section-right">
+
+        </div>
+      </div>
+      <div class="section-flex">
+        <div class="section-left">
+
+        </div>
+        <div class="section-right line3">
+          — I don’t sell only Bibles. I can show you a sacred book that might
+          interest you. I acquired it in the outskirts of Bikanir.
+        </div>
+      </div>
+      <div class="section-flex">
+        <div class="section-left">
+          Abrió la valija y lo dejó sobre la mesa. Era un volumen en octavo,
+          encuadernado en tela. Sin duda había pasado por muchas manos. Lo examiné;
+          su inusitado peso me sorprendió. En el lomo decía Holy Writ y abajo Bombay.
+        </div>
+        <div class="section-right">
+
+        </div>
+      </div>
+      <div class="section-flex">
+        <div class="section-left">
+
+        </div>
+        <div class="section-right line4">
+          <span class="line4">— From the nineteenth century I’d hazard — I observed.</span>
+          <br>
+          <span class="line5">— I don’t know. I’ve never known — was the response.</span>
+        </div>
+      </div>
+    </div>
+    <script src="js/tilt.jquery.js"></script>
   </body>
 </html>
