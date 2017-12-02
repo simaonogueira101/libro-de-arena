@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.garamond {
+  font-family: 'EB Garamond', serif;
+}
+
+@font-face {
+    font-family: simplon-bold;
+    src: url(../fonts/SimplonMono-Bold.woff2);
+}
+
+.simplon {
+  font-family: 'simplon-bold';
+}
+
+.section-1 {
+  white-space: nowrap;
+}
