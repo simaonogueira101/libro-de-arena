@@ -207,6 +207,6 @@ section {
   transition: filter 1s;
 }
 
-.miopia {
+.miopia, .extranjero {
   cursor: pointer;
 }
