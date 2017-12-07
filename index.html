@@ -11,9 +11,12 @@
     <script src="js/scrollmagic/uncompressed/ScrollMagic.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/anime.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/turn.js"></script>
   </head>
   <body>
+    <script src="js/three.js"></script>
+    <script src="js/ColladaLoader.js"></script>
+
     <div class="body-info">
       <div class="top-left text-tiny info-item">
         Jorge Luis Borges
@@ -21,11 +24,18 @@
       <div class="bottom-left text-tiny info-item">
         El Libro de Arena
       </div>
-      <div class="top-right cooper-thin text-tinier info-item">
+      <div class="top-right cooper-thin text-tinier info-item" onclick="menu()">
         MENU
       </div>
       <div class="bottom-right cooper-thin text-tinier info-item">
-        SECTION <span class="section-number cooper-heavy">1</span>
+        CHAPTER <span class="section-number cooper-heavy">1</span>
+      </div>
+      <div class="menu">
+        <p class="cooper-thin" onclick="section1()">CHAPTER <span class="cooper-heavy">1</span></p>
+        <p class="cooper-thin" onclick="section2()">CHAPTER <span class="cooper-heavy">2</span></p>
+        <p class="cooper-thin" onclick="section3()">CHAPTER <span class="cooper-heavy">3</span></p>
+        <p class="cooper-thin" onclick="section4()">CHAPTER <span class="cooper-heavy">4</span></p>
+        <p class="cooper-thin" onclick="section5()">CHAPTER <span class="cooper-heavy">5</span></p>
       </div>
     </div>
     <div class="section-1">
@@ -139,8 +149,139 @@
             fantástico; el mío, sin embargo, es verídico.
         </p>
       </section>
+      <section class="sub-section-5">
+        <div class="shuffle-container text-medium">
+          <p id="shuffle">
+            Lo abrí al azar. Los caracteres me eran extraños.
+          </p>
+        </div>
+        <div class="shuffle-container text-medium">
+          <p id="shuffle2">
+            Las páginas, que me parecieron gastadas y de pobre tipografía,
+          </p>
+        </div>
+        <div class="shuffle-container text-medium">
+          <p id="shuffle3">
+            estaban impresas a dos columnas a la manera de una biblia.
+          </p>
+        </div>
+        <div class="shuffle-container text-medium">
+          <p id="shuffle4">
+            El texto era apretado y estaba ordenado en versículos.
+          </p>
+        </div>
+        <div class="shuffle-container text-medium">
+          <p id="shuffle5">
+            En el ángulo superior de las páginas había cifras arábigas.
+          </p>
+        </div>
+        <div class="book-container">
+          <div class="book-last">
+            — Esto no puede ser.
+          </div>
+          <div id="flipbook">
+            <div class="book-page">
+              <div class="book-content page-1">
+                …thy rope of sands…
+                <br>
+                George Herbert (1593-1623)
+              </div>
+            </div>
+            <div class="book-page">
+              <div class="book-content page-description">
+                Me llamó la atención que la página par llevara el número (digamos)
+                40.514 y la impar, la siguiente, 999.
+              </div>
+            </div>
+            <div class="book-page">
+              <div class="book-content page-description">
+                La volví; el dorso estaba numerado con ocho cifras. Llevaba una
+                pequeña ilustración, como es de uso en los diccionarios: un ancla
+                dibujada a la pluma, como por la torpe mano de un niño.
+              </div>
+            </div>
+            <div class="book-page">
+              <div class="book-content page-description">
+                Fue entonces que el desconocido me dijo:
+              </div>
+            </div>
+            <div class="book-page">
+              <div class="book-content page-speach">
+                — Mírela bien. Ya no la verá nunca más.
+              </div>
+            </div>
+            <div class="book-page">
+              <div class="book-content page-description">
+                Había una amenaza en la afirmación, pero no en la voz. Me fijé
+                en el lugar y cerré el volumen. Inmediatamente lo abrí. En vano
+                busqué la figura del ancla, hoja tras hoja.
+                <br>
+                Para ocultar mi desconcierto, le dije:
+              </div>
+            </div>
+            <div class="book-page">
+              <div class="book-content page-speach">
+                — Se trata de una versión de la Escritura en alguna lengua indostánica, ¿no es verdad?
+              </div>
+            </div>
+            <div class="book-page">
+              <div class="book-content page-speach">
+                — No
+              </div>
+            </div>
+            <div class="book-page">
+              <div class="book-content page-description">
+                — me replicó.
+              </div>
+            </div>
+            <div class="book-page">
+              <div class="book-content page-description">
+                Luego bajó la voz como para confiarme un secreto:
+              </div>
+            </div>
+            <div class="book-page">
+              <div class="book-content page-speach">
+                — Lo adquirí en un pueblo de la llanura, a cambio de unas rupias
+                y de la Biblia. Su poseedor no sabía leer. Sospecho que en el Libro
+                de los Libros vio un amuleto. Era de la casta más baja; la gente
+                no podía pisar su sombra, sin contaminación.
+              </div>
+            </div>
+            <div class="book-page">
+              <div class="book-content page-description">
+                Me dijo que su libro se llamaba el Libro de Arena, porque ni el
+                libro ni la arena tienen ni principio ni fin. Me pidió que buscara
+                la primera hoja. Apoyé la mano izquierda sobre la portada y abrí
+                con el dedo pulgar casi pegado al índice.
+              </div>
+            </div>
+            <div class="book-page">
+              <div class="book-content page-description">
+                Todo fue inútil: siempre se interponían varias hojas entre la portada
+                y la mano. Era como si brotaran del libro.
+              </div>
+            </div>
+            <div class="book-page">
+              <div class="book-content page-speach">
+                — Ahora busque el final.
+              </div>
+            </div>
+            <div class="book-page">
+              <div class="book-content page-description">
+                También fracasé; apenas logré balbucear con una voz que no era la mía:
+              </div>
+            </div>
+            <div class="book-page">
+              <div class="book-content page-speach">
+                — Esto no puede ser.
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="js/text-shuffle.js"></script>
+      </section>
     </div>
-    <div class="section-2">
+    <div class="section-2" id="section-2">
       <div class="section-flex">
         <div class="section-left">
           Yo vivo solo, en un cuarto piso de la calle Belgrano. Hará unos meses, al
@@ -174,7 +315,7 @@
 
         </div>
       </div>
-      <div class="section-flex">
+      <div class="section-flex" id="book-start">
         <div class="section-left">
 
         </div>
@@ -223,6 +364,11 @@
         </div>
       </div>
     </div>
+    <!--<script src="js/3d.js"></script>-->
+    <div class="section-3" id="section-3">
+    </div>
+    <script src="js/flipbook-main.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/tilt.jquery.js"></script>
   </body>
 </html>

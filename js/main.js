@@ -1,12 +1,27 @@
 var h = window.innerHeight;
 var w = 1600;
+var realW = window.innerWidth;
+
+var scroll;
+$('.sub-section-5').css('margin-left', $('.section-3').position().top + h + h/2 + 'px');
+
+$('canvas').css({ 'opacity': 0 });
+
+// console.log($('.sub-section-5').outerWidth());
+$('.section-3').css('height', $('.sub-section-5').outerWidth() + 2.5*h + 'px');
+
 
 window.onscroll=function() {
-	var scroll = window.scrollY;
+	scroll = window.scrollY;
 
   $('.sub-section-2').css('left', '-' + scroll + 'px');
   $('.sub-section-3').css('left', '-' + scroll + 'px');
   $('.sub-section-4').css('left', '-' + scroll + 'px');
+  $('.sub-section-5').css('left', '-' + scroll + 'px');
+
+
+	//console.log(scrollSection3);
+  //$('.sub-section3-1').css('left', '-' + scroll + 'px');
 
   if(scroll < 5 * w){
     $('.circle').css({ 'opacity': 1 });
@@ -55,11 +70,30 @@ window.onscroll=function() {
     $('.circle').css("height", "0px");
     $(".section-number").html("2");
   }
+
+	var bookStart = $('.section-2').position().top + $('#book-start').position().top;
+	if(scroll < bookStart){
+    $('canvas').css({ 'opacity': 0 });
+  }
+  if(scroll > bookStart){
+    $('canvas').css({ 'opacity': 0.5 });
+  }
+  if(scroll > $('.section-3').position().top){
+    $('canvas').css({ 'opacity': 1 });
+		$('body').css("background-color","black");
+		$('.info-item').css("color","white");
+		$(".section-number").html("3");
+  }
+	headText.restart();
+	headText2.restart();
+	headText3.restart();
+	headText4.restart();
+	headText5.restart();
 }
 
 var miopiaBoolean = true;
 function miopia() {
-  console.log(miopiaBoolean);
+  // console.log(miopiaBoolean);
   if(miopiaBoolean) {
     $('.section-right').css("filter","blur(0px)");
     miopiaBoolean = false;
@@ -86,4 +120,42 @@ function extranjero() {
     $(".line5").html("— I don’t know. I’ve never known — was the response.");
     extranjeroBoolean = true;
   }
+}
+
+var menuBoolean = true;
+function menu() {
+	$(".menu").toggleClass('active');
+	if(menuBoolean) {
+		$(".top-right").html("CLOSE");
+		menuBoolean = false;
+	} else {
+		$(".top-right").html("MENU");
+		menuBoolean = true;
+	}
+}
+
+function section1() {
+	$('html, body').animate({
+			scrollTop: $(".section-1").offset().top
+	}, 2000);
+}
+function section2() {
+	$('html, body').animate({
+			scrollTop: $(".section-2").offset().top
+	}, 2000);
+}
+function section3() {
+	$('html, body').animate({
+			scrollTop: $(".section-3").offset().top + h/2
+	}, 2000);
+}
+function section4() {
+	$('html, body').animate({
+			scrollTop: $(".section-4").offset().top
+	}, 2000);
+}
+function section5() {
+	$('html, body').animate({
+			scrollTop: $(".section-5").offset().top
+	}, 2000);
 }
