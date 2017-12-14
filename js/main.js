@@ -10,6 +10,8 @@ $('canvas').css({ 'opacity': 0 });
 // console.log($('.sub-section-5').outerWidth());
 $('.section-3').css('height', $('.sub-section-5').outerWidth() + 2.5*h + 'px');
 
+$('.section-6').css('margin-top', $('.overlay-content').height() - $('.section-5').height() + realW/2 + 'px');
+
 
 window.onscroll=function() {
 	scroll = window.scrollY;
@@ -22,7 +24,12 @@ window.onscroll=function() {
 
 	//console.log(scrollSection3);
   //$('.sub-section3-1').css('left', '-' + scroll + 'px');
-
+	if(scroll < 1 * w){
+    $('.animation-container').css({ 'opacity': 0.6 });
+  }
+	if(scroll > 1 * w){
+    $('.animation-container').css({ 'opacity': 0 });
+  }
   if(scroll < 5 * w){
     $('.circle').css({ 'opacity': 1 });
   }
@@ -89,6 +96,22 @@ window.onscroll=function() {
 	headText3.restart();
 	headText4.restart();
 	headText5.restart();
+	if(scroll > $('.section-4').position().top){
+    $('canvas').css({ 'opacity': 0 });
+    $('.animation-container').css({ 'opacity': 0.6 });
+		$('body').css("background-color","white");
+		$('.info-item').css("color","black");
+		$(".section-number").html("4");
+  }
+	if(scroll < $('.section-4').position().top){
+    $('.animation-container').css({ 'opacity': 0 });
+  }
+	if(scroll > $('.section-5').position().top){
+		$(".section-number").html("5");
+  }
+	if(scroll > $('.section-6').position().top + realW){
+		$(".section-number").html("INFO");
+  }
 }
 
 var miopiaBoolean = true;
@@ -123,12 +146,29 @@ function extranjero() {
 }
 
 var menuBoolean = true;
+var colorRIGHT = $(".top-right").css( "color" );
 function menu() {
+	console.log(colorRIGHT + "0");
 	$(".menu").toggleClass('active');
 	if(menuBoolean) {
+		$('.top-right').css("color","black");
 		$(".top-right").html("CLOSE");
+		colorRIGHT = $(".top-right").css( "color" );
 		menuBoolean = false;
 	} else {
+		/*
+		$( "div" ).click(function() {
+		  var color = $( this ).css( "background-color" );
+		  $( "p" ).html( "That div is " + color + "." );
+		});
+		*/
+		if(colorRIGHT == "rgb(0, 0, 0)") {
+			$('.top-right').css("color","black");
+			console.log(colorRIGHT + "1");
+		} else {
+			$('.top-right').css("color","white");
+			console.log(colorRIGHT + "2");
+		}
 		$(".top-right").html("MENU");
 		menuBoolean = true;
 	}
@@ -159,3 +199,108 @@ function section5() {
 			scrollTop: $(".section-5").offset().top
 	}, 2000);
 }
+function section6() {
+	$('html, body').animate({
+			scrollTop: $(".section-6").offset().top
+	}, 2000);
+}
+
+
+'use strict';
+
+var range = 10000;
+var number;
+var numberString;
+setInterval(function(){
+
+	//console.log(numberString);
+}, 100);
+
+var app = {
+
+  init: function () {
+    app.container = document.createElement('div');
+    app.container.className = 'animation-container';
+    document.getElementById("section-4").appendChild(app.container);
+    window.setInterval(app.add, 100);
+  },
+
+  add: function () {
+    var element = document.createElement('span');
+    app.container.appendChild(element);
+    app.animate(element);
+  },
+
+  animate: function (element) {
+		var numberString = "" + Math.floor( Math.random() * range / 2 ) * 2;
+    var duration = Math.floor(Math.random() * 40) + 1;
+    var offset = Math.floor(Math.random() * (100)) + 0;
+    var size = 15 + (20 - duration);
+    element.style.cssText = 'right:'+offset+'vw; font-size:'+size+'px;animation-duration:'+duration+'s';
+    element.innerHTML = numberString;
+    window.setTimeout(app.remove, duration * 1000, element);
+  },
+
+  remove: function (element) {
+    element.parentNode.removeChild(element);
+  },
+
+};
+
+document.addEventListener('DOMContentLoaded', app.init);
+
+
+
+var waypoint = new Waypoint({
+  element: document.getElementById('trato1'),
+  handler: function(direction) {
+    $("#trato1").addClass( "trato-active" );
+  },
+	offset: '75%'
+})
+var waypoint2 = new Waypoint({
+  element: document.getElementById('trato2'),
+  handler: function(direction) {
+    $("#trato2").addClass( "trato-active" );
+  },
+	offset: '75%'
+})
+var waypoint3 = new Waypoint({
+  element: document.getElementById('trato3'),
+  handler: function(direction) {
+    $("#trato3").addClass( "trato-active" );
+  },
+	offset: '75%'
+})
+var waypoint4 = new Waypoint({
+  element: document.getElementById('trato4'),
+  handler: function(direction) {
+    $("#trato4").addClass( "trato-active" );
+  },
+	offset: '75%'
+})
+var waypoint5 = new Waypoint({
+  element: document.getElementById('trato5'),
+  handler: function(direction) {
+    $("#trato5").addClass( "trato-active" );
+  },
+	offset: '75%'
+})
+var waypoint6 = new Waypoint({
+  element: document.getElementById('trato6'),
+  handler: function(direction) {
+    $("#trato6").addClass( "trato-active" );
+  },
+	offset: '75%'
+})
+
+var waypoint7 = new Waypoint({
+  element: document.getElementById('section-5'),
+  handler: function(direction) {
+    $("#section-5 img").addClass( "active5" );
+  },
+	offset: '75%'
+})
+
+
+console.log($(".overlay-content").height());

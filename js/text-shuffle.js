@@ -23,7 +23,7 @@ function WordShuffler(holder,opt){
     mixSpecialCharacters : false,
     needUpdate : true,
     colors : [
-      '#ff0000','#00ff00','#0000ff','#000000','#ffffff'
+      '#ff0000','#00CFDE','#000000','#ffffff'
     ]
   }
 

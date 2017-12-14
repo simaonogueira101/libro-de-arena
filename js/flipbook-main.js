@@ -2,7 +2,7 @@ $("#flipbook").turn({
 	page: 2,
   width: $(".book-container").innerWidth(),
   height: $(".book-container").innerHeight(),
-  autoCenter: true
+  autoCenter: false
 });
 
 var numPages = $('.book-page').length;
@@ -44,6 +44,9 @@ $(".book-page.even").addClass('book-center');
 $("#flipbook").bind("last", function(event) {
 	//console.log("You are at the end of the flipbook");
   $(".book-last").css({ 'opacity': 1 });
+  $('html, body').animate({
+      scrollTop: $("#flipbook").offset().top + realW/2 + realW/16
+  }, 2000);
 });
 $("#flipbook").bind("turning", function(event, page, view) {
   $(".book-last").css({ 'opacity': 0 });
