@@ -108,9 +108,13 @@ window.onscroll=function() {
   }
 	if(scroll > $('.section-5').position().top){
 		$(".section-number").html("5");
+		$('.circle').css({ 'opacity': 0.7 });
   }
-	if(scroll > $('.section-6').position().top + realW){
-		$(".section-number").html("INFO");
+	if(scroll > $('.section-5').position().top + $('.overlay-content').height()){
+		$(".section-number").html("SI");
+		$('.circle').css("height", "500px");
+		$('.animation-container').css({ 'opacity': 0 });
+		$('.circle').css({ 'opacity': 0.2 });
   }
 }
 
@@ -148,11 +152,11 @@ function extranjero() {
 var menuBoolean = true;
 var colorRIGHT = $(".top-right").css( "color" );
 function menu() {
-	console.log(colorRIGHT + "0");
+	//console.log(colorRIGHT + "0");
 	$(".menu").toggleClass('active');
 	if(menuBoolean) {
 		$('.top-right').css("color","black");
-		$(".top-right").html("CLOSE");
+		$(".top-right").html("CERRAR");
 		colorRIGHT = $(".top-right").css( "color" );
 		menuBoolean = false;
 	} else {
@@ -164,10 +168,10 @@ function menu() {
 		*/
 		if(colorRIGHT == "rgb(0, 0, 0)") {
 			$('.top-right').css("color","black");
-			console.log(colorRIGHT + "1");
+			//console.log(colorRIGHT + "1");
 		} else {
 			$('.top-right').css("color","white");
-			console.log(colorRIGHT + "2");
+			//console.log(colorRIGHT + "2");
 		}
 		$(".top-right").html("MENU");
 		menuBoolean = true;
@@ -303,4 +307,4 @@ var waypoint7 = new Waypoint({
 })
 
 
-console.log($(".overlay-content").height());
+//console.log($(".overlay-content").height());

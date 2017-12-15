@@ -559,5 +559,26 @@ canvas {
 }
 
 .section-6 {
-  height: 200vh;
+  position: relative;
+  z-index: 0;
+}
+
+.sinopse-container {
+  padding-top: 100vh;
+  padding-bottom: 300vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sinopse-container * {
+  font-family: 'cooper-medium';
+  font-size: 1.5rem;
+}
+.sinopse-container h1 {
+  font-family: 'cooper-heavy';
+}
+.sinopse {
+  max-width: 700px;
+  width: 70%;
 }
